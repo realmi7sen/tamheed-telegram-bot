@@ -1,3 +1,10 @@
+// هذا الكود الصغير عشان يخلي سيرفر Render ما يطفي البوت
+const http = require('http');
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Bot is running\n');
+}).listen(process.env.PORT || 3000);
+
 const TelegramBot = require("node-telegram-bot-api");
 
 const TOKEN = "8788176562:AAHxxwA7yDjxm2GvPZylIb6iAHnamnZWfDo";
@@ -26,3 +33,4 @@ bot.on("message", (msg) => {
 });
 
 console.log("البوت يعمل الآن...");
+
